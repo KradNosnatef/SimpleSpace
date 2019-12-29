@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.view.Controller">
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="CenterEntity" />
+            <TextField fx:id="centerEntityMassGTextField" layoutX="85.0" layoutY="36.0" prefHeight="23.0" prefWidth="100.0" />
+            <Label layoutX="26.0" layoutY="40.0" text="Mass*G:" />
+            <Button layoutX="136.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#onButtonCenterEntityCheckClick" text="Check" />
+            <Label layoutX="36.0" layoutY="417.0" text="at PE" />
+            <Label layoutX="35.0" layoutY="177.0" text="Speed:" />
+            <Label layoutX="31.0" layoutY="232.0" text="Altitude" />
+            <TextField fx:id="shipEntitySpeedTextField" layoutX="86.0" layoutY="173.0" prefHeight="23.0" prefWidth="100.0" />
+            <TextField fx:id="shipEntityAPPETextField" layoutX="86.0" layoutY="228.0" prefHeight="23.0" prefWidth="100.0" />
+            <Button layoutX="33.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onButtonPEAccelerate_1Click" text="1%" />
+            <Button layoutX="32.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#onButtonPEBrake_5Click" text="5%" />
+            <Button layoutX="130.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#onButtonAPBrake_5Click" text="5%" />
+            <Button layoutX="130.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onButtonAPAccelerate_1Click" text="1%" />
+            <Label layoutX="14.0" layoutY="325.0" text="accelerate：" />
+            <Label layoutX="132.0" layoutY="417.0" text="at AP" />
+            <Label layoutX="16.0" layoutY="517.0" text="brake:" />
+            <Button layoutX="33.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonPEAccelerate_5Click" text="5%" />
+            <Button layoutX="130.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonAPAccelerate_5Click" text="5%" />
+            <Button layoutX="130.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onButtonAPBrake_1Click" text="1%" />
+            <Button layoutX="32.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onButtonPEBrake_1Click" text="1%" />
+            <Button layoutX="22.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShiftClick" text="Paues/Start" />
+         </children>
+      </Pane>
+   </left>
+   <right>
+      <TextArea fx:id="infoTextArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Ellipse fx:id="Orbit1" fill="TRANSPARENT" layoutX="300.0" layoutY="345.0" radiusX="10.0" radiusY="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#1f93ff" layoutX="300.0" layoutY="345.0" radius="6.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="Evade" layoutX="163.0" layoutY="281.0">
+               <font>
+                  <Font size="50.0" />
+               </font>
+            </Label>
+            <Circle fx:id="ShipPosition1" fill="#ff1f1f" layoutX="300.0" layoutY="345.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+            <Ellipse fx:id="Orbit2" fill="TRANSPARENT" layoutX="300.0" layoutY="345.0" radiusX="10.0" radiusY="10.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fx:id="ShipPosition2" fill="#ff1f1f" layoutX="300.0" layoutY="345.0" radius="4.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
