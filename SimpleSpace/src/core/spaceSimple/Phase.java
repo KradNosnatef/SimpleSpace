@@ -3,6 +3,7 @@ package core.spaceSimple;
 
 public class Phase {
 	public static double val=0;
+	public static double playspeed=1;
 	double phaseDelta=0;
 	Entity entity;
 	public Phase(Entity entity) {

@@ -32,7 +32,11 @@
             <Button layoutX="130.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonAPAccelerate_5Click" text="5%" />
             <Button layoutX="130.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onButtonAPBrake_1Click" text="1%" />
             <Button layoutX="32.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onButtonPEBrake_1Click" text="1%" />
-            <Button layoutX="22.0" layoutY="565.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShiftClick" text="Paues/Start" />
+            <Label layoutX="16.0" layoutY="560.0" text="Timehift:" />
+            <Button layoutX="36.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShiftPauseClick" text="Paues/Start" />
+            <Button layoutX="36.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift1XClick" text="1X" />
+            <Button layoutX="36.0" layoutY="657.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift5XClick" text="5X" />
+            <Button layoutX="36.0" layoutY="691.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift10XClick" text="10X" />
          </children>
       </Pane>
    </left>

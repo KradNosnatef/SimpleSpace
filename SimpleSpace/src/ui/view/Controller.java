@@ -18,14 +18,26 @@ public class Controller {
 	CenterEntity earth;
 	Entity ship1;
 	String centerEntityInfoText,infoText;
-	
+
 	@FXML
 	private void initialize(){
 		
 	}
 	
 	@FXML
-	private void onButtonTimeShiftClick() {
+	private void onButtonTimeShift1XClick(){
+		Phase.playspeed=1;
+	}
+	@FXML
+	private void onButtonTimeShift5XClick(){
+		Phase.playspeed=5;
+	}
+	@FXML
+	private void onButtonTimeShift10XClick(){	
+		Phase.playspeed=10;
+	}
+	@FXML
+	private void onButtonTimeShiftPauseClick() {
 		if(pause==1)pause=0;
 		else pause=1;
 	}
@@ -153,7 +165,7 @@ public class Controller {
 		        public void run() {
 		            if(pause==0) {
 		            	System.out.println("TimerUP!");
-		            	Phase.val=Phase.val+0.05;
+		            	Phase.val=Phase.val+Phase.playspeed;
 		            	ship1.phase.optimization();
 		            	if(paint==1)refreshShipPosition();
 		            }
