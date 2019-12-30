@@ -110,7 +110,7 @@ public class Controller {
 	private void onButtonCenterEntityCheckClick() {
 		//System.out.println(centerEntityMassGTextField.getText());
 		earth.setMassG(Double.valueOf(centerEntityMassGTextField.getText()));
-		ship1.setVAPPE(Double.valueOf(shipEntitySpeedTextField.getText()), Double.valueOf(shipEntityAPPETextField.getText()));
+		ship1.setInitialState(Double.valueOf(shipEntitySpeedTextField.getText()),90, Double.valueOf(shipEntityAPPETextField.getText()),0);
 		paint=1;
 		refreshCenterEntityInfoTextArea();
 		shipEntitySpeedTextField.setText("");
@@ -137,7 +137,11 @@ public class Controller {
 		else{
 			Orbit1.setRadiusX(5*ship1.getSemimajorAxis());
 			Orbit1.setRadiusY(5*ship1.getSemiminorAxis());
-			Orbit1.setCenterX(5*ship1.getSemifocallength());
+			Orbit1.setCenterX(5*ship1.getSemifocallength()*Math.cos(Math.toRadians(ship1.rotate)));
+			Orbit1.setCenterY(-5*ship1.getSemifocallength()*Math.sin(Math.toRadians(ship1.rotate)));
+			Orbit1.setRotate(-ship1.rotate);
+			//the fxml Rotate's positive direction is not CounterClockWise,which is different from the usually usage of Polar corrdinates!
+			//use Negative number!
 			ship1.orbitCalculator.refreshArray();
 			refreshShipPosition();
 			Evade.setText("");
@@ -152,8 +156,9 @@ public class Controller {
 		System.out.println(angle);
 		length=ship1.getSemiminorAxis()*ship1.getSemiminorAxis()/(ship1.getSemimajorAxis()-ship1.getSemifocallength()*Math.cos(Math.toRadians(Double.valueOf(angle))));
 		System.out.println(angle+","+length);
-		ShipPosition1.setCenterX(5*Math.cos(Math.toRadians(Double.valueOf(angle)))*length);
-		ShipPosition1.setCenterY(-5*Math.sin(Math.toRadians(Double.valueOf(angle)))*length);
+		ShipPosition1.setCenterX(5*Math.cos(Math.toRadians(Double.valueOf(angle+ship1.rotate)))*length);
+		ShipPosition1.setCenterY(-5*Math.sin(Math.toRadians(Double.valueOf(angle+ship1.rotate)))*length);
+		//the fxml CenterY's positive direction is the Down Direction so that use Negative number!
 	}
 	
 	public void setAppCore(PB16120162 appCore) {

@@ -1,9 +1,9 @@
 package core.spaceSimple;
 
-public class OrbitCalculator {//Paint Dynamic Orbit Movement
+public class OrbitCalculator {//Paint Dynamic Orbit Movement,compute the live position of entity
 	Entity entity;
-	public int angleDelta=0;
-	double[] arrayOfIsoAngle;
+	public double angleDelta=0;//this parameter's usage is to keep the position after and before maneuver the same;
+	double[] arrayOfIsoAngle;//this array's subscripts is degree!cos() and sin() use radians as parameter!
 	public OrbitCalculator(Entity entity) {
 		this.entity=entity;
 		arrayOfIsoAngle=new double[360];
@@ -32,7 +32,7 @@ public class OrbitCalculator {//Paint Dynamic Orbit Movement
 	public int getAngle(){
 		int i;
 		double t=entity.phase.getSum();
-		t=t+arrayOfIsoAngle[angleDelta];
+		t=t+(arrayOfIsoAngle[Double.valueOf(angleDelta).intValue()]*1.0001);
 		for(;;) {
 			t=t-entity.getPeriod();
 			if(t<0)break;
