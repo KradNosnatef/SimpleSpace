@@ -37,49 +37,13 @@ public class Controller {
 		Phase.playspeed=10;
 	}
 	@FXML
+	private void onButtonTimeShift0_1XClick(){	
+		Phase.playspeed=0.1;
+	}
+	@FXML
 	private void onButtonTimeShiftPauseClick() {
 		if(pause==1)pause=0;
 		else pause=1;
-	}
-	@FXML
-	private void onButtonAPAccelerate_1Click() {
-		ship1.maneuver.APAccelerate(0.01);
-		refreshCenterEntityInfoTextArea();
-	}
-	@FXML
-	private void onButtonAPAccelerate_5Click() {
-		ship1.maneuver.APAccelerate(0.05);
-		refreshCenterEntityInfoTextArea();
-	}
-	@FXML
-	private void onButtonAPBrake_1Click() {
-		ship1.maneuver.APAccelerate(-0.01);
-		refreshCenterEntityInfoTextArea();
-	}
-	@FXML
-	private void onButtonAPBrake_5Click() {
-		ship1.maneuver.APAccelerate(-0.05);
-		refreshCenterEntityInfoTextArea();
-	}
-	@FXML
-	private void onButtonPEAccelerate_1Click() {
-		ship1.maneuver.PEAccelerate(0.01);
-		refreshCenterEntityInfoTextArea();
-	}
-	@FXML
-	private void onButtonPEAccelerate_5Click() {
-		ship1.maneuver.PEAccelerate(0.05);
-		refreshCenterEntityInfoTextArea();
-	}
-	@FXML
-	private void onButtonPEBrake_1Click() {
-		ship1.maneuver.PEAccelerate(-0.01);
-		refreshCenterEntityInfoTextArea();	
-	}
-	@FXML
-	private void onButtonPEBrake_5Click() {
-		ship1.maneuver.PEAccelerate(-0.05);
-		refreshCenterEntityInfoTextArea();
 	}
 	@FXML
 	private Circle ShipPosition1;
@@ -90,7 +54,11 @@ public class Controller {
 	@FXML
 	private Ellipse Orbit2;
 	
-	
+	@FXML
+	private void onButtonTryClick() {
+		ship1.maneuver.radialAcceleration(Double.valueOf(accelerationPercent.getText())*0.01);
+		refreshCenterEntityInfoTextArea();
+	}
 	@FXML
 	private Label Evade;
 
@@ -105,6 +73,9 @@ public class Controller {
 
 	@FXML
 	private TextField shipEntityAPPETextField;
+	
+	@FXML
+	private TextField accelerationPercent;
 	
 	@FXML
 	private void onButtonCenterEntityCheckClick() {
@@ -125,9 +96,7 @@ public class Controller {
 	private void refreshInfoTextArea(){
 		infoText="Center entity Mass*G=\n\t"+centerEntityInfoText+"\n";
 		infoText+="Ship AP=\n\t"+String.valueOf(ship1.getAP())+"\n";
-		infoText+="Ship APSpeed=\n\t"+String.valueOf(ship1.getAPSpeed())+"\n";
 		infoText+="Ship PE=\n\t"+String.valueOf(ship1.getPE())+"\n";
-		infoText+="Ship PESpeed=\n\t"+String.valueOf(ship1.getPESpeed())+"\n";
 		infoTextArea.setText(infoText);
 		refreshOrbit();
 	}
@@ -136,6 +105,7 @@ public class Controller {
 		if(ship1.getPE()<0)Evade.setText("Evade!");
 		else{
 			Orbit1.setRadiusX(5*ship1.getSemimajorAxis());
+			//System.out.println("radiusx="+5*ship1.getSemimajorAxis());
 			Orbit1.setRadiusY(5*ship1.getSemiminorAxis());
 			Orbit1.setCenterX(5*ship1.getSemifocallength()*Math.cos(Math.toRadians(ship1.rotate)));
 			Orbit1.setCenterY(-5*ship1.getSemifocallength()*Math.sin(Math.toRadians(ship1.rotate)));

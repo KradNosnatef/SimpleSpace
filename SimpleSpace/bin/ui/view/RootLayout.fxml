@@ -16,27 +16,20 @@
             <TextField fx:id="centerEntityMassGTextField" layoutX="85.0" layoutY="36.0" prefHeight="23.0" prefWidth="100.0" />
             <Label layoutX="26.0" layoutY="40.0" text="Mass*G:" />
             <Button layoutX="136.0" layoutY="277.0" mnemonicParsing="false" onMouseClicked="#onButtonCenterEntityCheckClick" text="Check" />
-            <Label layoutX="36.0" layoutY="417.0" text="at PE" />
             <Label layoutX="35.0" layoutY="177.0" text="Speed:" />
             <Label layoutX="31.0" layoutY="232.0" text="Altitude" />
             <TextField fx:id="shipEntitySpeedTextField" layoutX="86.0" layoutY="173.0" prefHeight="23.0" prefWidth="100.0" />
             <TextField fx:id="shipEntityAPPETextField" layoutX="86.0" layoutY="228.0" prefHeight="23.0" prefWidth="100.0" />
-            <Button layoutX="33.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onButtonPEAccelerate_1Click" text="1%" />
-            <Button layoutX="32.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#onButtonPEBrake_5Click" text="5%" />
-            <Button layoutX="130.0" layoutY="445.0" mnemonicParsing="false" onMouseClicked="#onButtonAPBrake_5Click" text="5%" />
-            <Button layoutX="130.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#onButtonAPAccelerate_1Click" text="1%" />
             <Label layoutX="14.0" layoutY="325.0" text="accelerate：" />
-            <Label layoutX="132.0" layoutY="417.0" text="at AP" />
-            <Label layoutX="16.0" layoutY="517.0" text="brake:" />
-            <Button layoutX="33.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonPEAccelerate_5Click" text="5%" />
-            <Button layoutX="130.0" layoutY="383.0" mnemonicParsing="false" onMouseClicked="#onButtonAPAccelerate_5Click" text="5%" />
-            <Button layoutX="130.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onButtonAPBrake_1Click" text="1%" />
-            <Button layoutX="32.0" layoutY="479.0" mnemonicParsing="false" onMouseClicked="#onButtonPEBrake_1Click" text="1%" />
             <Label layoutX="16.0" layoutY="560.0" text="Timehift:" />
             <Button layoutX="36.0" layoutY="585.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShiftPauseClick" text="Paues/Start" />
             <Button layoutX="36.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift1XClick" text="1X" />
             <Button layoutX="36.0" layoutY="657.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift5XClick" text="5X" />
             <Button layoutX="36.0" layoutY="691.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift10XClick" text="10X" />
+            <Button layoutX="99.0" layoutY="626.0" mnemonicParsing="false" onMouseClicked="#onButtonTimeShift0_1XClick" text="0.1X" />
+            <Button layoutX="58.0" layoutY="389.0" mnemonicParsing="false" onMouseClicked="#onButtonTryClick" text="accelerate" />
+            <TextField fx:id="accelerationPercent" layoutX="59.0" layoutY="348.0" prefHeight="23.0" prefWidth="36.0" />
+            <Label layoutX="103.0" layoutY="352.0" text="\%" />
          </children>
       </Pane>
    </left>

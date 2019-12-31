@@ -32,6 +32,15 @@ public class OrbitCalculator {//Paint Dynamic Orbit Movement,compute the live po
 	public int getAngle(){
 		int i;
 		double t=entity.phase.getSum();
+		for(;;) {
+			if(angleDelta>=360)angleDelta=angleDelta-360;
+			else break;
+		}
+
+		for(;;) {
+			if(angleDelta<0)angleDelta=angleDelta+360;
+			else break;
+		}
 		t=t+(arrayOfIsoAngle[Double.valueOf(angleDelta).intValue()]*1.0001);
 		for(;;) {
 			t=t-entity.getPeriod();
